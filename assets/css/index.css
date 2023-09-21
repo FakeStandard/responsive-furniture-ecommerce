@@ -497,17 +497,13 @@ h3 {
     transform: translate(-50%, 100%);
     display: flex;
     gap: 15px;
-    /* opacity: 0; */
+    opacity: 0;
     transition: var(--transition-2);
 }
 
 .product-card .card-banner:is(:hover, :focus-within) .card-action-list {
     transform: translate(-50%, -50%);
     opacity: 1;
-}
-
-.product-card .card-action-btn {
-    background-color: var(--white);
 }
 
 .product-card .card-action-btn {
@@ -601,8 +597,87 @@ h3 {
         opacity: 0;
         transform: translateY(10px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* BLOGS */
+.blog .title-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px 50px;
+    margin-block-end: 50px;
+}
+
+.blog .btn-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: var(--fw-500);
+    transition: var(--transition-1);
+}
+
+.blog .btn-link:is(:hover, :focus) {
+    color: var(--tan-crayola);
+}
+
+.blog-card .card-banner {
+    position: relative;
+}
+
+.blog-card .card-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 15px;
+    transform: translateX(100%);
+    transition: var(--transition-2);
+}
+
+.blog-card:is(:hover, :focus) .card-btn {
+    transform: translateX(0);
+}
+
+.blog-card .card-title {
+    margin-block: 20px 10px;
+    transition: var(--transition-1);
+}
+
+.blog-card .card-title:is(:hover, :focus) {
+    color: var(--tan-crayola);
+}
+
+.blog-card .card-meta-list {
+    display: flex;
+    align-items: center;
+}
+
+.card-meta-item {
+    position: relative;
+    color: var(--granite-gray);
+    font-size: var(--fs-5);
+}
+
+.card-meta-item:not(:last-child)::after {
+    content: "/";
+    margin-inline: 8px;
+    color: var(--spanish-gray);
+}
+
+.card-meta-text {
+    display: inline-block;
+    color: var(--black);
+    transition: var(--transition-1);
+}
+
+a.card-meta-text:is(:hover, :focus) {
+    color: var(--tan-crayola);
 }
