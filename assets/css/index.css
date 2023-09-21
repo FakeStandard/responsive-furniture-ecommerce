@@ -174,6 +174,35 @@ body.active {
     object-fit: cover;
 }
 
+.h2,
+.h3 {
+    color: var(--smokey-black);
+    font-weight: var(--fw-500);
+    line-height: 1.4;
+}
+
+.h2 {
+    font-size: var(--fs-2);
+}
+
+h3 {
+    font-size: var(--fs-3);
+}
+
+.grid-list {
+    display: grid;
+    gap: 35px;
+}
+
+.has-before {
+    position: relative;
+}
+
+.has-before::before {
+    content: "";
+    position: absolute;
+}
+
 /* HEADER */
 .header .input-wrapper {
     display: none;
@@ -414,4 +443,166 @@ body.active {
 
 .about-card:is(:hover, :focus) .play-btn {
     background-color: var(--black_50);
+}
+
+/* PRODUCT */
+.product .section-title {
+    text-align: center;
+}
+
+.filter-btn-list {
+    margin-block: 20px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-btn-item {
+    position: relative;
+    display: flex;
+}
+
+.filter-btn-item:not(:last-child)::after {
+    content: "|";
+    margin-inline: 15px;
+}
+
+.filter-btn {
+    transition: var(--transition-1);
+}
+
+.filter-btn.active {
+    color: var(--tan-crayola);
+}
+
+.product-card {
+    text-align: center;
+}
+
+.product-card .card-banner::before {
+    inset: 0;
+    background-color: var(--black_10);
+    opacity: 0;
+    transition: var(--transition-1);
+}
+
+.product-card .card-banner:is(:hover, :focus-within)::before {
+    opacity: 1;
+}
+
+.product-card .card-action-list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    display: flex;
+    gap: 15px;
+    /* opacity: 0; */
+    transition: var(--transition-2);
+}
+
+.product-card .card-banner:is(:hover, :focus-within) .card-action-list {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+
+.product-card .card-action-btn {
+    background-color: var(--white);
+}
+
+.product-card .card-action-btn {
+    background-color: var(--white);
+    font-size: 22px;
+    padding: 12px;
+    border-radius: 50%;
+    transition: var(--transition-1);
+}
+
+.product-card .card-action-btn:is(:hover, :focus) {
+    color: var(--tan-crayola);
+}
+
+.product-card .badge-list {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.product-card .badge {
+    color: var(--white);
+    font-size: var(--fs-5);
+    font-weight: var(--fw-500);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    line-height: 45px;
+    margin-block-end: 10px;
+}
+
+.product-card .badge.orange {
+    background-color: var(--red-orange-color-wheel);
+}
+
+.product-card .badge.cyan {
+    background-color: var(--middle-blue-green);
+}
+
+.product-card .card-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--black);
+    color: var(--white);
+    font-weight: var(--fw-500);
+    padding-inline: 15px;
+}
+
+.product-card .h3 {
+    font-size: unset;
+}
+
+.product-card .card-title {
+    color: var(--smokey-black);
+    font-weight: var(--fw-500);
+    margin-block: 18px 5px;
+    transition: var(--transition-1);
+}
+
+.product-card .card-title:is(:hover, :focus) {
+    color: var(--tan-crayola);
+}
+
+.product-card .card-price {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    color: var(--granite-gray);
+    font-size: var(--fs-4);
+}
+
+.product-card .card-price .del {
+    color: var(--spanish-gray);
+}
+
+.product-list > * {
+    display: none;
+}
+
+.product-list[data-filter="all"] > *,
+.product-list[data-filter="accessory"] > .accessory,
+.product-list[data-filter="decoration"] > .decoration,
+.product-list[data-filter="furniture"] > .furniture {
+    display: block;
+    animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
