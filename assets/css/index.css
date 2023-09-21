@@ -378,3 +378,40 @@ body.active {
 .home-card .card-title:is(:hover, :focus) {
     color: var(--tan-crayola);
 }
+
+/* ABOUT */
+.about {
+    text-align: center;
+}
+
+.about .section-title {
+    font-family: var(--ff-mr_de_haviland);
+    font-size: var(--fs-1);
+    font-weight: var(--fw-500);
+}
+
+.about-card {
+    position: relative;
+}
+
+.about-card .img-cover {
+    transition: var(--transition-2);
+}
+
+.about-card:is(:hover, :focus) .img-cover {
+    transform: scale(1.1);
+}
+
+.about-card .play-btn {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    color: var(--white);
+    font-size: 80px;
+    transition: var(--transition-1);
+}
+
+.about-card:is(:hover, :focus) .play-btn {
+    background-color: var(--black_50);
+}
