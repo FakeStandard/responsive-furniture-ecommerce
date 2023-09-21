@@ -136,6 +136,7 @@ body.active {
 }
 
 /* REUSED STYLE */
+
 .container {
     padding-inline: 15px;
 }
@@ -185,7 +186,7 @@ body.active {
     font-size: var(--fs-2);
 }
 
-h3 {
+.h3 {
     font-size: var(--fs-3);
 }
 
@@ -196,6 +197,7 @@ h3 {
 
 .has-before {
     position: relative;
+    z-index: 1;
 }
 
 .has-before::before {
@@ -204,6 +206,7 @@ h3 {
 }
 
 /* HEADER */
+
 .header .input-wrapper {
     display: none;
 }
@@ -229,7 +232,6 @@ h3 {
     0% {
         transform: translateY(-100%);
     }
-
     100% {
         transform: translateY(0);
     }
@@ -285,7 +287,7 @@ h3 {
     background-color: var(--white);
     padding: 40px;
     padding-block-end: 100px;
-    overflow-y: hidden;
+    overflow-y: auto;
     z-index: 5;
     visibility: hidden;
     transition: 0.25s var(--cubic-in);
@@ -362,7 +364,7 @@ h3 {
     z-index: 4;
     opacity: 0;
     pointer-events: none;
-    transform: var(--transition-1);
+    transition: var(--transition-1);
 }
 
 .overlay.active {
@@ -372,7 +374,7 @@ h3 {
 
 /* HOME */
 .home {
-    padding-block-start: var(--section-padding) + 60px;
+    padding-block-start: calc(var(--section-padding) + 60px);
 }
 
 .home-list {
@@ -401,6 +403,10 @@ h3 {
 
 .home-card :is(.card-title, .card-text) {
     font-weight: var(--fw-500);
+}
+
+.home-card .card-title {
+    font-size: var(--fs-3);
     transition: var(--transition-1);
 }
 
@@ -820,4 +826,175 @@ a.card-meta-text:is(:hover, :focus) {
     opacity: 1;
     visibility: visible;
     transform: translateY(-10px);
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 575px) {
+    .container {
+        max-width: 575px;
+        width: 100%;
+        margin-inline: auto;
+    }
+
+    .grid-list {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 25px;
+    }
+
+    .grid-list > li:last-child {
+        grid-column: span 2;
+        max-width: calc(50% - 12.5px);
+        width: 100%;
+        margin-inline: auto;
+    }
+
+    .header .container {
+        gap: 35px;
+    }
+
+    .header .input-wrapper {
+        display: block;
+        position: relative;
+    }
+
+    .header .input-field {
+        padding-block: 10px;
+        padding-inline-end: 30px;
+        border-block-end: 1px solid var(--black_25);
+        outline: none;
+        transition: var(--transition-1);
+    }
+
+    .header .input-field::-webkit-search-cancel-button {
+        display: none;
+    }
+
+    .header .input-field:focus {
+        border-block-end-color: var(--tan-crayola);
+    }
+
+    .header .input-wrapper ion-icon {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        font-size: 24px;
+    }
+
+    .header-action {
+        gap: 25px;
+    }
+
+    .newsletter {
+        background: none;
+    }
+
+    .newsletter-card {
+        background-color: var(--cultured);
+        padding: 20px 30px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+
+    .header-action {
+        gap: 35px;
+    }
+
+    .header .input-wrapper {
+        width: 200px;
+    }
+
+    .home-list {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    .home-list .colspan-2 {
+        grid-column: span 2;
+    }
+
+    .about .section-text {
+        margin-block-end: 75px;
+    }
+
+    .product .title-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-block-end: 80px;
+    }
+
+    .filter-btn-list {
+        margin: 0;
+    }
+
+    .newsletter-card {
+        padding: 50px 70px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 992px;
+    }
+
+    .grid-list > li:last-child {
+        all: unset;
+    }
+
+    .grid-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .home-card .card-title {
+        --fs-3: 2.2rem;
+    }
+
+    .about .section-text {
+        max-width: 85ch;
+        margin-inline: auto;
+    }
+
+    .newsletter {
+        --section-padding: 50px;
+    }
+
+    .newsletter-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .newsletter-card .card-content {
+        margin-block-end: 0;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr 0.75fr 0.6fr 1fr;
+        padding-block-end: 60px;
+    }
+}
+
+@media (min-width: 1200px) {
+    :root {
+        --fs-2: 3.6rem;
+    }
+
+    .container {
+        max-width: 1200px;
+    }
+
+    .product-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
