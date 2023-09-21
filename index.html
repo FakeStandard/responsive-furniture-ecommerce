@@ -33,7 +33,8 @@
 </head>
 
 <body>
-    <header class="header active" data-header>
+    <!--HEADER-->
+    <header class="header" data-header>
         <div class="container">
             <div class="input-wrapper">
                 <input type="search" name="search" placeholder="Search Anything..." class="input-field">
@@ -67,6 +68,116 @@
         </div>
     </header>
 
+    <!--SIDEBAR-->
+    <div class="sidebar" data-navbar>
+        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <div class="wrapper">
+            <ul class="sidebar-list">
+                <li>
+                    <p class="sidebar-list-title">Language</p>
+                </li>
+
+                <li>
+                    <a href="#" class="sidebar-link">English</a>
+                </li>
+
+                <li>
+                    <a href="#" class="sidebar-link">French</a>
+                </li>
+
+                <li>
+                    <a href="#" class="sidebar-link">Arabric</a>
+                </li>
+            </ul>
+
+            <ul class="sidebar-list">
+                <li>
+                    <p class="sidebar-list-title">Currency</p>
+                </li>
+
+                <li>
+                    <a href="#" class="sidebar-link">USD - US Dollar</a>
+                </li>
+
+                <li>
+                    <a href="#" class="sidebar-link">Euro</a>
+                </li>
+
+                <li>
+                    <a href="#" class="sidebar-link">Pound</a>
+                </li>
+            </ul>
+        </div>
+
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li class="navbar-item">
+                    <a href="#home" class="navbar-link" data-nav-link>Home</a>
+                </li>
+
+                <li class="navbar-item">
+                    <a href="#about" class="navbar-link" data-nav-link>About</a>
+                </li>
+
+                <li class="navbar-item">
+                    <a href="#product" class="navbar-link" data-nav-link>Product</a>
+                </li>
+
+                <li class="navbar-item">
+                    <a href="#blogs" class="navbar-link" data-nav-link>Blogs</a>
+                </li>
+            </ul>
+        </nav>
+
+        <ul class="contact-list">
+            <li>
+                <p class="contact-list-title">Contact Us</p>
+            </li>
+
+            <li class="contact-item">
+                <address class="address">
+                    69 Halsey St, Ny 10002, New York, United States
+                </address>
+            </li>
+
+            <li class="contact-item">
+                <a href="mailto:support.center@woodex.co" class="contact-link">support.center@woodex.co</a>
+            </li>
+
+            <li class="contact-item">
+                <a href="tel:00001235567890" class="contact-link">(0000) 1235 567890</a>
+            </li>
+        </ul>
+
+        <div class="social-wrapper">
+            <p class="social-list-title">Follow US On Socials</p>
+
+            <ul class="social-list">
+                <li>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-tumblr"></ion-icon>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="overlay" data-overlay data-nav-toggler></div>
 
     <!--JS-->
     <script src="./assets/js/index.js" defer></script>
