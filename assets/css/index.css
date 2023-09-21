@@ -681,3 +681,50 @@ h3 {
 a.card-meta-text:is(:hover, :focus) {
     color: var(--tan-crayola);
 }
+
+/* NEWSLATTER */
+.newsletter {
+    --section-padding: 20px;
+    background-color: var(--cultured);
+}
+
+.newsletter-card {
+    padding-inline: 15px;
+}
+
+.newsletter-card .card-content {
+    margin-block-end: 40px;
+}
+
+.newsletter .section-title {
+    margin-block-end: 8px;
+}
+
+.newsletter-card .h2 {
+    --fs-2: 2.6rem;
+}
+
+.newsletter .card-form {
+    position: relative;
+}
+
+.newsletter-card .email-field {
+    background-color: var(--white);
+    padding-block: 14px;
+    padding-inline: 20px 50px;
+    outline: 3px solid transparent;
+    outline-offset: 0;
+    transition: var(--transition-1);
+}
+
+.newsletter-card .email-field:focus {
+    outline-color: var(--black_25);
+}
+
+.newsletter-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding-inline: 20px;
+}
