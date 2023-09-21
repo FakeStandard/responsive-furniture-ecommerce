@@ -799,3 +799,25 @@ a.card-meta-text:is(:hover, :focus) {
 .copyright-link {
     display: inline-block;
 }
+
+/* BACK TO TOP */
+.back-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--tan-crayola);
+    color: var(--white);
+    border-radius: 50%;
+    z-index: 4;
+    font-size: 24px;
+    padding: 18px;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-1);
+}
+
+.back-top-btn.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-10px);
+}
