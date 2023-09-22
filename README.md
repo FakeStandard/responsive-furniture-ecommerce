@@ -1,4 +1,3 @@
-# responsive-furniture-ecommerce
 # :house: RWD Furniture E-Commerce
 
 - Responsive Website Modern Design
